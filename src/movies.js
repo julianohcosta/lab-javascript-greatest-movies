@@ -154,9 +154,7 @@ function bestYearAvg(moviesArray) {
     const filteredMovies = moviesArray.filter(movie => movie.year === year)
     let avg = 0;
 
-    filteredMovies.forEach(movie => {
-      avg += movie.score;
-    })
+    filteredMovies.forEach(movie => {avg += movie.score;})
 
     let average = Math.round((avg / filteredMovies.length + Number.EPSILON) * 100) / 100
 
