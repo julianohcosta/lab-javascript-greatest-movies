@@ -143,8 +143,6 @@ function turnHoursToMinutes(moviesArray) {
 function bestYearAvg(moviesArray) {
   if (!moviesArray.length) return null
 
-  console.log("###########################################################")
-
   /** Filter all unique years */
   const uniqueYears = [...new Set(moviesArray.map(m => m.year))]
   const averageScoreByYear = []
