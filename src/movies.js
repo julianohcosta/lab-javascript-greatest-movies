@@ -27,7 +27,7 @@ function getAllDirectors(moviesArray) {
 // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
 /**
  * @param {Array.<Movie>} moviesArray - Array de objetos Movie
- * @returns {number} O número de filmes do gênero drama dirigido pelo Steven Spielberg.
+ * @returns {number} O número de filmes do gênero drama dirigidos pelo Steven Spielberg.
  */
 function howManyMovies(moviesArray) {
   return moviesArray.filter(
@@ -82,7 +82,7 @@ function dramaMoviesScore(moviesArray) {
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
 /**
  * @param {Array.<Movie>} moviesArray - Array de objetos Movie
- * @returns {Array.<Movie>} moviesArray - Array de objetos Movie ordenado.
+ * @returns {Array.<Movie>} Array de objetos Movie ordenado.
  */
 function orderByYear(moviesArray) {
   moviesArray.sort((m1, m2) => {
@@ -98,7 +98,7 @@ function orderByYear(moviesArray) {
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
 /**
  * @param {Array.<Movie>} moviesArray - Array de objetos Movie
- * @returns {Array.<Movie>} moviesArray - Array de objetos Movie.
+ * @returns {Array.<Movie>} Array de objetos Movie.
  */
 function orderAlphabetically(moviesArray) {
   return moviesArray
@@ -110,8 +110,8 @@ function orderAlphabetically(moviesArray) {
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 /**
  *
- * @param {Array.<Movie>} moviesArray -
- * @return {Array.<Movie>}
+ * @param {Array.<Movie>} moviesArray - Array de objetos Movie
+ * @return {Array.<Movie>} Array de objetos Movie.
  */
 function turnHoursToMinutes(moviesArray) {
   const newArray = [];
