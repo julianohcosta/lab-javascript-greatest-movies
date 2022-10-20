@@ -127,9 +127,10 @@ function turnHoursToMinutes(moviesArray) {
     if (duration.includes("min")) {
       minutes = parseInt(duration.split(" ")[1].replace("min", ""));
     }
-    movie.duration = hours + minutes;
 
-    newArray.push(movie);
+    let newMovie = {...movie}
+    newMovie.duration = hours + minutes;
+    newArray.push(newMovie);
   }
   
   return newArray;

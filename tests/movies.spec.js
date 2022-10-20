@@ -403,7 +403,7 @@ describe('Function "turnHoursToMinutes"', () => {
   it('should return a new array, not mutate the original one', () => {
     const returnValue = turnHoursToMinutes(movies);
     expect(returnValue instanceof Array).toBe(true);
-    expect(turnHoursToMinutes(movies)).not.toEqual(movies);    
+    expect(turnHoursToMinutes(movies)).not.toBe(movies);    
   });
 
   it('should return an array of movies with duration as a number', () => {
