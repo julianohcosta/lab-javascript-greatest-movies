@@ -51,17 +51,10 @@ function howManyMovies(moviesArray) {
 function scoresAverage(moviesArray) {
   if (moviesArray.length === 0) return 0;
 
-  const avg = [];
+  let sum = 0;
+  moviesArray.forEach(m => {if(m.score) sum += m.score})
 
-  for (let movie of moviesArray) {
-    if (movie.score) {
-      avg.push(movie.score);
-    } else {
-      avg.push(0);
-    }
-  }
-
-  return (Math.round((avg.reduce((a, b) => a + b, 0) / moviesArray.length + Number.EPSILON) *100) / 100);
+  return (Math.round((sum / moviesArray.length + Number.EPSILON) *100) / 100);
 }
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
@@ -72,12 +65,11 @@ function scoresAverage(moviesArray) {
 function dramaMoviesScore(moviesArray) {
   const dramaMovies = moviesArray.filter((m) => m.genre.includes("Drama"));
   if (dramaMovies.length === 0) return 0;
-  if (dramaMovies.length === 1) return dramaMovies[0].score;
 
-  let avg = 0;
-  dramaMovies.forEach((m) => (avg += m.score));
+  let sum = 0;
+  dramaMovies.forEach(m => sum += m.score);
 
-  return Math.round((avg / dramaMovies.length + Number.EPSILON) * 100) / 100;
+  return Math.round((sum / dramaMovies.length + Number.EPSILON) * 100) / 100;
 }
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
@@ -102,7 +94,7 @@ function orderByYear(moviesArray) {
  * @returns {Array.<Movie>} Array de objetos Movie.
  */
 function orderAlphabetically(moviesArray) {
-  return moviesArray.map((m) => m.title).sort().slice(0, 20);
+  return moviesArray.map(m => m.title).sort().slice(0, 20);
 }
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
@@ -136,8 +128,8 @@ function turnHoursToMinutes(moviesArray) {
 
 // BONUS - Iteration 8: Best yearly score average - Best yearly score average
 /**
- * @param {Array.<Movie>} moviesArray
- * @return {Array.<Movie>}
+ * @param {Array.<Movie>} moviesArray - Array de objetos Movie
+ * @return {Array.<Movie>} Array de objetos Movie.
  */
 function bestYearAvg(moviesArray) {
   if (!moviesArray.length) return null
