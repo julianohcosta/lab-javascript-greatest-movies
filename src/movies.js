@@ -66,10 +66,7 @@ function dramaMoviesScore(moviesArray) {
   const dramaMovies = moviesArray.filter(m => m.genre.includes("Drama"));
   if (dramaMovies.length === 0) return 0;
 
-  let sum = 0;
-  dramaMovies.forEach(m => sum += m.score);
-
-  return Math.round((sum / dramaMovies.length + Number.EPSILON) * 100) / 100;
+  return scoresAverage(dramaMovies)
 }
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
