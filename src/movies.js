@@ -63,10 +63,7 @@ function scoresAverage(moviesArray) {
  * @returns {number} A média de score dos filmes do gênero drama
  */
 function dramaMoviesScore(moviesArray) {
-  const dramaMovies = moviesArray.filter(m => m.genre.includes("Drama"));
-  if (dramaMovies.length === 0) return 0;
-
-  return scoresAverage(dramaMovies)
+  return scoresAverage(moviesArray.filter(m => m.genre.includes("Drama")))
 }
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
