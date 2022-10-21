@@ -18,7 +18,7 @@
 
 /**
  * @param {Array.<Movie>} moviesArray - Array de objetos Movie
- * @return {Array.<string>} Array com o nome dos diretores de cada filme.
+ * @returns {Array.<string>} Array com o nome dos diretores de cada filme.
  */
 function getAllDirectors(moviesArray) {
   return moviesArray.map(m => m.director);
@@ -27,7 +27,7 @@ function getAllDirectors(moviesArray) {
 // Bonus - Iteration 1.1: Clean the array of directors
 /**
  * @param {Array.<Movie>} moviesArray - Array de objetos Movie
- * @return {Array.<string>} Array com o nome dos diretores sem repetidos.
+ * @returns {Array.<string>} Array com o nome dos diretores sem repetidos.
  */
  function getUniqueDirectors(moviesArray) {
   return [...new Set(moviesArray.map(m => m.director))];
@@ -101,7 +101,7 @@ function orderAlphabetically(moviesArray) {
 /**
  *
  * @param {Array.<Movie>} moviesArray - Array de objetos Movie
- * @return {Array.<Movie>} Array de objetos Movie.
+ * @returns {Array.<Movie>} Array de objetos Movie.
  */
 function turnHoursToMinutes(moviesArray) {
   const newArray = [];
@@ -129,7 +129,7 @@ function turnHoursToMinutes(moviesArray) {
 // BONUS - Iteration 8: Best yearly score average - Best yearly score average
 /**
  * @param {Array.<Movie>} moviesArray - Array de objetos Movie
- * @return {Array.<Movie>} Array de objetos Movie.
+ * @returns {Array.<Movie>} Array de objetos Movie.
  */
 function bestYearAvg(moviesArray) {
   if (!moviesArray.length) return null
