@@ -21,7 +21,7 @@
  * @return {Array.<string>} Array com o nome dos diretores de cada filme.
  */
 function getAllDirectors(moviesArray) {
-  return moviesArray.map((el) => el.director);
+  return moviesArray.map(m => m.director);
 }
 
 // Bonus - Iteration 1.1: Clean the array of directors
@@ -30,7 +30,7 @@ function getAllDirectors(moviesArray) {
  * @return {Array.<string>} Array com o nome dos diretores sem repetidos.
  */
  function getUniqueDirectors(moviesArray) {
-  return [...new Set(moviesArray.map((el) => el.director))];
+  return [...new Set(moviesArray.map(m => m.director))];
 }
 
 // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
@@ -39,7 +39,7 @@ function getAllDirectors(moviesArray) {
  * @returns {number} O número de filmes do gênero drama dirigidos pelo Steven Spielberg.
  */
 function howManyMovies(moviesArray) {
-  return moviesArray.filter((movie) => movie.genre.includes("Drama") && movie.director === "Steven Spielberg").length;
+  return moviesArray.filter(m => m.genre.includes("Drama") && m.director === "Steven Spielberg").length;
 }
 
 // Iteration 3: All scores average - Get the average of all scores with 2 decimals
@@ -63,7 +63,7 @@ function scoresAverage(moviesArray) {
  * @returns {number} A média de score dos filmes do gênero drama
  */
 function dramaMoviesScore(moviesArray) {
-  const dramaMovies = moviesArray.filter((m) => m.genre.includes("Drama"));
+  const dramaMovies = moviesArray.filter(m => m.genre.includes("Drama"));
   if (dramaMovies.length === 0) return 0;
 
   let sum = 0;
