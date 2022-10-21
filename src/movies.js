@@ -18,10 +18,19 @@
 
 /**
  * @param {Array.<Movie>} moviesArray - Array de objetos Movie
- * @return {Array.<string>} Array com o nome das diretores de casa filme.
+ * @return {Array.<string>} Array com o nome dos diretores de cada filme.
  */
 function getAllDirectors(moviesArray) {
   return moviesArray.map((el) => el.director);
+}
+
+// Bonus - Iteration 1.1: Clean the array of directors
+/**
+ * @param {Array.<Movie>} moviesArray - Array de objetos Movie
+ * @return {Array.<string>} Array com o nome dos diretores sem repetidos.
+ */
+ function getUniqueDirectors(moviesArray) {
+  return [...new Set(moviesArray.map((el) => el.director))];
 }
 
 // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
@@ -30,10 +39,7 @@ function getAllDirectors(moviesArray) {
  * @returns {number} O número de filmes do gênero drama dirigidos pelo Steven Spielberg.
  */
 function howManyMovies(moviesArray) {
-  return moviesArray.filter(
-    (movie) =>
-      movie.genre.includes("Drama") && movie.director === "Steven Spielberg"
-  ).length;
+  return moviesArray.filter((movie) => movie.genre.includes("Drama") && movie.director === "Steven Spielberg").length;
 }
 
 // Iteration 3: All scores average - Get the average of all scores with 2 decimals
@@ -55,12 +61,7 @@ function scoresAverage(moviesArray) {
     }
   }
 
-  return (
-    Math.round(
-      (avg.reduce((a, b) => a + b, 0) / moviesArray.length + Number.EPSILON) *
-        100
-    ) / 100
-  );
+  return (Math.round((avg.reduce((a, b) => a + b, 0) / moviesArray.length + Number.EPSILON) *100) / 100);
 }
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
@@ -101,10 +102,7 @@ function orderByYear(moviesArray) {
  * @returns {Array.<Movie>} Array de objetos Movie.
  */
 function orderAlphabetically(moviesArray) {
-  return moviesArray
-    .map((m) => m.title)
-    .sort()
-    .slice(0, 20);
+  return moviesArray.map((m) => m.title).sort().slice(0, 20);
 }
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
@@ -151,8 +149,8 @@ function bestYearAvg(moviesArray) {
   for (let year of uniqueYears) {
 
     const filteredMovies = moviesArray.filter(movie => movie.year === year)
+    
     let avg = 0;
-
     filteredMovies.forEach(movie => {avg += movie.score;})
 
     let average = Math.round((avg / filteredMovies.length + Number.EPSILON) * 100) / 100
