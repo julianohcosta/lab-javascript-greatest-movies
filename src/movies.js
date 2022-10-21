@@ -17,7 +17,7 @@
 // How could you "clean" a bit this array and make it unified (without duplicates)?
 
 /**
- * @param {Array.Movie} moviesArray - Array de objetos Movie
+ * @param {Array.<Movie>} moviesArray - Array de objetos Movie
  * @return {Array.<string>} Array com o nome das diretores de casa filme.
  */
 function getAllDirectors(moviesArray) {
