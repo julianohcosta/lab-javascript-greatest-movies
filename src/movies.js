@@ -52,8 +52,7 @@ function scoresAverage(moviesArray) {
   if (moviesArray.length === 0) return 0;
 
   let sum = 0;
-  moviesArray.forEach(m => {if(m.score) sum += m.score})
-
+  moviesArray.forEach(m => sum += (m.score || 0))
   return (Math.round((sum / moviesArray.length + Number.EPSILON) *100) / 100);
 }
 
