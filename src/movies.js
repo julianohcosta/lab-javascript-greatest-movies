@@ -18,7 +18,7 @@
 
 /**
  * @param {Movie[]} moviesArray - Array de objetos Movie
- * @returns {Array.<string>} Array com o nome dos diretores de cada filme.
+ * @returns {string[]} Array com o nome dos diretores de cada filme.
  */
 function getAllDirectors(moviesArray) {
   return moviesArray.map(m => m.director);
@@ -27,7 +27,7 @@ function getAllDirectors(moviesArray) {
 // Bonus - Iteration 1.1: Clean the array of directors
 /**
  * @param {Movie[]} moviesArray - Array de objetos Movie
- * @returns {Array.<string>} Array com o nome dos diretores sem repetidos.
+ * @returns {string[]} Array com o nome dos diretores sem repetidos.
  */
  function getUniqueDirectors(moviesArray) {
   return [...new Set(moviesArray.map(m => m.director))];
