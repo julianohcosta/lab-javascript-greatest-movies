@@ -8,8 +8,8 @@
  * @property {string} title - Movie title.
  * @property {number} year - Release year.
  * @property {string} director - Director name.
- * @property {string} duration - Movie duration.
- * @property {Array.<string>} genre - Movie genres.
+ * @property {string|number} duration - Movie duration.
+ * @property {string[]} genre - Movie genres.
  * @property {number} score - Movie score.
  *
  */
@@ -68,7 +68,7 @@ function dramaMoviesScore(moviesArray) {
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
 /**
  * @param {Movie[]} moviesArray - Array de objetos Movie
- * @returns {Movie[]} Array de objetos Movie ordenado.
+ * @returns {Movie[]} Array de objetos Movie ordenado pelo ano e título.
  */
 function orderByYear(moviesArray) {
   moviesArray.sort((m1, m2) => {
@@ -84,7 +84,7 @@ function orderByYear(moviesArray) {
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
 /**
  * @param {Movie[]} moviesArray - Array de objetos Movie
- * @returns {string[]} Array de objetos Movie.
+ * @returns {string[]} Array com no máximo os 20 primeiros títulos dos filmes do array original.
  */
 function orderAlphabetically(moviesArray) {
   return moviesArray.map(m => m.title).sort().slice(0, 20);
@@ -123,7 +123,7 @@ function turnHoursToMinutes(moviesArray) {
 // BONUS - Iteration 8: Best yearly score average - Best yearly score average
 /**
  * @param {Movie[]} moviesArray - Array de objetos Movie
- * @returns {string|null} Array de objetos Movie.
+ * @returns {string|null} Menssagem com o ano que possui a melhor média.
  */
 function bestYearAvg(moviesArray) {
   if (!moviesArray.length) return null
