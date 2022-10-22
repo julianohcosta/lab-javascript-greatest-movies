@@ -2,7 +2,7 @@
 // _Bonus_: It seems some of the directors had directed multiple movies so they will pop up multiple times in the array of directors.
 
 /**
- * Definição do tipo Movie para autocomplete do VSCode
+ * DefiniÃ§Ã£o do tipo Movie para autocomplete do VSCode
  * @typedef Movie
  * @type {object}
  * @property {string} title - Movie title.
@@ -17,7 +17,7 @@
 // How could you "clean" a bit this array and make it unified (without duplicates)?
 
 /**
- * @param {Array.<Movie>} moviesArray - Array de objetos Movie
+ * @param {Movie[]} moviesArray - Array de objetos Movie
  * @returns {Array.<string>} Array com o nome dos diretores de cada filme.
  */
 function getAllDirectors(moviesArray) {
@@ -26,7 +26,7 @@ function getAllDirectors(moviesArray) {
 
 // Bonus - Iteration 1.1: Clean the array of directors
 /**
- * @param {Array.<Movie>} moviesArray - Array de objetos Movie
+ * @param {Movie[]} moviesArray - Array de objetos Movie
  * @returns {Array.<string>} Array com o nome dos diretores sem repetidos.
  */
  function getUniqueDirectors(moviesArray) {
@@ -35,8 +35,8 @@ function getAllDirectors(moviesArray) {
 
 // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
 /**
- * @param {Array.<Movie>} moviesArray - Array de objetos Movie
- * @returns {number} O número de filmes do gênero drama dirigidos pelo Steven Spielberg.
+ * @param {Movie[]} moviesArray - Array de objetos Movie
+ * @returns {number} O nÃºmero de filmes do gÃªnero drama dirigidos pelo Steven Spielberg.
  */
 function howManyMovies(moviesArray) {
   return moviesArray.filter(m => m.genre.includes("Drama") && m.director === "Steven Spielberg").length;
@@ -45,8 +45,8 @@ function howManyMovies(moviesArray) {
 // Iteration 3: All scores average - Get the average of all scores with 2 decimals
 /**
  *
- * @param {Array.<Movie>} moviesArray - Array de objetos Movie
- * @returns {number} A média de score dos filmes
+ * @param {Movie[]} moviesArray - Array de objetos Movie
+ * @returns {number} A mÃ©dia de score dos filmes
  */
 function scoresAverage(moviesArray) {
   if (moviesArray.length === 0) return 0;
@@ -59,8 +59,8 @@ function scoresAverage(moviesArray) {
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
 /**
- * @param {Array.<Movie>} moviesArray - Array de objetos Movie
- * @returns {number} A média de score dos filmes do gênero drama
+ * @param {Movie[]} moviesArray - Array de objetos Movie
+ * @returns {number} A mÃ©dia de score dos filmes do gÃªnero drama
  */
 function dramaMoviesScore(moviesArray) {
   return scoresAverage(moviesArray.filter(m => m.genre.includes("Drama")))
@@ -68,8 +68,8 @@ function dramaMoviesScore(moviesArray) {
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
 /**
- * @param {Array.<Movie>} moviesArray - Array de objetos Movie
- * @returns {Array.<Movie>} Array de objetos Movie ordenado.
+ * @param {Movie[]} moviesArray - Array de objetos Movie
+ * @returns {Movie[]} Array de objetos Movie ordenado.
  */
 function orderByYear(moviesArray) {
   moviesArray.sort((m1, m2) => {
@@ -84,8 +84,8 @@ function orderByYear(moviesArray) {
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
 /**
- * @param {Array.<Movie>} moviesArray - Array de objetos Movie
- * @returns {Array.<Movie>} Array de objetos Movie.
+ * @param {Movie[]} moviesArray - Array de objetos Movie
+ * @returns {string[]} Array de objetos Movie.
  */
 function orderAlphabetically(moviesArray) {
   return moviesArray.map(m => m.title).sort().slice(0, 20);
@@ -94,13 +94,14 @@ function orderAlphabetically(moviesArray) {
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 /**
  *
- * @param {Array.<Movie>} moviesArray - Array de objetos Movie
- * @returns {Array.<Movie>} Array de objetos Movie.
+ * @param {Movie[]} moviesArray - Array de objetos Movie
+ * @returns {Movie[]} Array de objetos Movie.
  */
 function turnHoursToMinutes(moviesArray) {
   const newArray = [];
 
   for (const movie of moviesArray) {
+
     const duration = movie.duration;
     let hours = 0;
     let minutes = 0;
@@ -122,8 +123,8 @@ function turnHoursToMinutes(moviesArray) {
 
 // BONUS - Iteration 8: Best yearly score average - Best yearly score average
 /**
- * @param {Array.<Movie>} moviesArray - Array de objetos Movie
- * @returns {Array.<Movie>} Array de objetos Movie.
+ * @param {Movie[]} moviesArray - Array de objetos Movie
+ * @returns {string|null} Array de objetos Movie.
  */
 function bestYearAvg(moviesArray) {
   if (!moviesArray.length) return null
