@@ -30,7 +30,7 @@ function getAllDirectors(moviesArray) {
  * @returns {string[]} Array com o nome dos diretores sem repetidos.
  */
  function getUniqueDirectors(moviesArray) {
-  return [...new Set(moviesArray.map(m => m.director))];
+  return [...new Set(getAllDirectors(moviesArray))];
 }
 
 // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
@@ -51,8 +51,7 @@ function howManyMovies(moviesArray) {
 function scoresAverage(moviesArray) {
   if (moviesArray.length === 0) return 0;
 
-  let sum = 0;
-  moviesArray.forEach(m => sum += (m.score || 0))
+  const sum = moviesArray.reduce((acc, m) => acc + (m.score || 0), 0)
   return (Math.round((sum / moviesArray.length + Number.EPSILON) *100) / 100);
 }
 
